@@ -1,10 +1,9 @@
-import Sms77Client, {SmsJsonResponse, SmsParams} from 'sms77-client';
+import {SmsJsonResponse, SmsParams} from 'sms77-client';
 import i18n from '../i18n';
 
 import {notify} from './notify';
 import {LocalStore} from './LocalStore';
-
-const pkg = require('../../package.json');
+import initClient from './initClient'
 
 export type SendSmsProps = {
     from: string
@@ -61,7 +60,7 @@ export const sendSms = async ({text, to, from}: SendSmsProps): Promise<string> =
 
     const lines = [];
 
-    res = await (new Sms77Client(apiKey as string, pkg.sms77.sentWith)).sms(opts);
+    res = await initClient(apiKey as string).sms(opts);
 
     const {balance, messages, sms_type, success, total_price} = res as SmsJsonResponse;
 

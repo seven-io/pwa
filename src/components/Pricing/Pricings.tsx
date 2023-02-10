@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
-import Sms77Client, {CountryPricing, PricingResponse} from 'sms77-client';
+import {CountryPricing, PricingResponse} from 'sms77-client';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
@@ -15,8 +15,7 @@ import {LocalStore} from '../../util/LocalStore';
 import {addSnackbar, setBackdrop, setNav} from '../../store/actions';
 import {CountryFlag} from '../CountryFlag';
 import {Pricing} from './Pricing';
-
-const pkg = require('../../../package.json');
+import initClient from '../../util/initClient'
 
 export const Pricings = () => {
     const {t} = useTranslation('pricing');
@@ -51,7 +50,7 @@ export const Pricings = () => {
 
     const getAndStore = async () => {
         dispatch(setBackdrop(true));
-        const pricing = await (new Sms77Client(apiKey as string, pkg.sms77.sentWith))
+        const pricing = await initClient(apiKey as string)
             .pricing({format: 'json'}) as PricingResponse;
         dispatch(setBackdrop(false));
 

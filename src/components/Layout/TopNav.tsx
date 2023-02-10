@@ -31,38 +31,38 @@ export const TopNav = () => {
 
     return <AppBar variant='outlined' position='static'>
         <Toolbar variant='dense' className={classes.toolbar}>
-            <a href='#!' onClick={() => window.location.assign('https://www.sms77.io/')}>
+            <a href='#!' onClick={() => window.location.assign('https://www.seven.io/')}>
                 <img src={logo} alt='' className={classes.logo}/>
             </a>
 
             <ButtonGroup color='primary' aria-label={t('socialsBtnGroup')}>
                 <Button className={classes.link} size='small'
-                        onClick={() => window.location.assign('https://www.facebook.com/sms77.io/')}>
+                        onClick={() => window.location.assign('https://www.facebook.com/sevencommunications7')}>
                     <FacebookIcon/>
                 </Button>
 
                 <Button className={classes.link}
-                        onClick={() => window.location.assign('https://www.linkedin.com/company/sms77/')}>
+                        onClick={() => window.location.assign('https://www.linkedin.com/company/sevenio/')}>
                     <LinkedInIcon/>
                 </Button>
 
                 <Button className={classes.link}
-                        onClick={() => window.location.assign('https://twitter.com/sms77io')}>
+                        onClick={() => window.location.assign('https://twitter.com/sevenio7')}>
                     <TwitterIcon/>
                 </Button>
 
                 <Button className={classes.link}
-                        onClick={() => window.location.assign('https://www.sms77.io/de/feed/')}>
+                        onClick={() => window.location.assign('https://www.seven.io/de/feed/')}>
                     <RssFeedIcon/>
                 </Button>
 
                 <Button className={classes.link}
-                        onClick={() => window.location.assign('https://github.com/sms77io')}>
+                        onClick={() => window.location.assign('https://github.com/seven-io')}>
                     <GitHubIcon/>
                 </Button>
 
                 <Button className={classes.link}
-                        onClick={() => window.location.assign('https://www.sms77.io/en/company/contact/')}>
+                        onClick={() => window.location.assign('https://www.seven.io/en/company/contact/')}>
                     <HelpIcon/>
                 </Button>
             </ButtonGroup>

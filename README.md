@@ -1,3 +1,7 @@
-# Sms77.io Progressive Web App
+![](https://www.seven.io/wp-content/uploads/Logo.svg "seven Logo")
 
-## Developers https://facebook.github.io/create-react-app/docs/getting-started
+
+# seven.io Progressive Web App
+
+## Developers 
+https://facebook.github.io/create-react-app/docs/getting-started

@@ -2,12 +2,12 @@ const pkg = require('../../package.json');
 
 const controllerKey = 'action';
 
-type Sms77CustomEventData = {
+type SevenCustomEventData = {
     [key: string]: any
 } & { [controllerKey]?: never };
 
-export const dispatchCustomEvent = (action: string, data: Sms77CustomEventData = {}): boolean => {
-    const customEvent = new CustomEvent(pkg.sms77.name, {
+export const dispatchCustomEvent = (action: string, data: SevenCustomEventData = {}): boolean => {
+    const customEvent = new CustomEvent(pkg.seven.name, {
         detail: {...data, [controllerKey]: action}
     });
 

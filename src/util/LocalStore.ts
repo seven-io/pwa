@@ -14,7 +14,7 @@ const defaults: ILocalStore = {
     lookups: [],
     options: {
         apiKey: '',
-        from: 'sms77io',
+        from: 'seven',
         signature: '',
         signaturePosition: 'append',
         to: '',
@@ -23,9 +23,9 @@ const defaults: ILocalStore = {
 
 localForage.config({
     driver: localForage.INDEXEDDB,
-    name: pkg.sms77.name,
-    version: 1.0,
-    storeName: pkg.sms77.name, // must be alphanumeric (+ underscores)
+    name: pkg.seven.name,
+    version: pkg.version,
+    storeName: pkg.seven.name, // must be alphanumeric (+ underscores)
 });
 
 localForage.length().then(async length => {

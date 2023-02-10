@@ -1,14 +1,14 @@
 {
-    "author": "sms77 e.K. <support@sms77.io>",
+    "author": "seven communications GmbH & Co. KG <support@seven.io>",
     "contributors": [
-        "André Matthies <andre@gmail.com>"
+        "André Matthies <matthiez@gmail.com>"
     ],
-    "sms77": {
-        "name": "sms77pwa",
+    "seven": {
+        "name": "sevenpwa",
         "sentWith": "PWA"
     },
     "name": "@sms77.io/pwa",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "private": true,
     "dependencies": {

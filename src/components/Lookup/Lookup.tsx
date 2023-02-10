@@ -1,7 +1,7 @@
 import React, {SyntheticEvent, useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {useTranslation} from 'react-i18next';
-import Sms77Client, {LookupType} from 'sms77-client';
+import {LookupType} from 'sms77-client';
 import {LOOKUP_TYPES} from 'sms77-client/dist/constants/LOOKUP_TYPES';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
@@ -20,8 +20,7 @@ import {toString} from '../../util/toString';
 import {TableRowSpreader} from '../TableRowSpreader';
 import {BaseHistory} from '../BaseHistory/BaseHistory';
 import {LookupResponse} from './types';
-
-const pkg = require('../../../package.json');
+import initClient from '../../util/initClient'
 
 export const Lookup = () => {
     const dispatch = useDispatch();
@@ -46,7 +45,7 @@ export const Lookup = () => {
 
         dispatch(setBackdrop(true));
 
-        const res = await (new Sms77Client(apiKey as string, pkg.sms77.sentWith)).lookup({
+        const res = await initClient(apiKey as string).lookup({
             json: true,
             number,
             type
