@@ -1,5 +1,5 @@
 import React from 'react';
-import {CountryPricing} from 'sms77-client';
+import {CountryPricing} from '@seven.io/api';
 
 export type CountryFlagProps = {
     pricing: CountryPricing

@@ -1,13 +1,13 @@
 {
-    "author": "sms77 e.K. <support@sms77.io>",
+    "author": "seven communications GmbH & Co. KG <support@seven.io>",
     "contributors": [
-        "André Matthies <andre@gmail.com>"
+        "André Matthies <matthiez@gmail.com>"
     ],
-    "sms77": {
-        "name": "sms77pwa",
+    "seven": {
+        "name": "sevenpwa",
         "sentWith": "PWA"
     },
-    "name": "@sms77.io/pwa",
+    "name": "@seven.io/pwa",
     "version": "1.0.0",
     "license": "MIT",
     "private": true,
@@ -28,7 +28,7 @@
         "react-scripts": "3.4.1",
         "redux": "^4.0.5",
         "redux-persist": "^6.0.0",
-        "sms77-client": "^1.9.2",
+        "@seven.io/api": "npm:sms77-client@^1.9.2",
         "smshelper": "^0.1.0",
         "typescript": "^3.9.6"
     },

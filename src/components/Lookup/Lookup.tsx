@@ -1,8 +1,8 @@
 import React, {SyntheticEvent, useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {useTranslation} from 'react-i18next';
-import Sms77Client, {LookupType} from 'sms77-client';
-import {LOOKUP_TYPES} from 'sms77-client/dist/constants/LOOKUP_TYPES';
+import SevenClient, {LookupType} from '@seven.io/api';
+import {LOOKUP_TYPES} from '@seven.io/api/dist/constants/LOOKUP_TYPES';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -46,7 +46,7 @@ export const Lookup = () => {
 
         dispatch(setBackdrop(true));
 
-        const res = await (new Sms77Client(apiKey as string, pkg.sms77.sentWith)).lookup({
+        const res = await (new SevenClient(apiKey as string, pkg.seven.sentWith)).lookup({
             json: true,
             number,
             type

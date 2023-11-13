@@ -1,5 +1,5 @@
 import React from 'react';
-import {Carrier} from 'sms77-client';
+import {Carrier} from '@seven.io/api';
 import TableContainer from '@material-ui/core/TableContainer';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';

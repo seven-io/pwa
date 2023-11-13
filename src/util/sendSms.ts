@@ -1,4 +1,4 @@
-import Sms77Client, {SmsJsonResponse, SmsParams} from 'sms77-client';
+import SevenClient, {SmsJsonResponse, SmsParams} from '@seven.io/api';
 import i18n from '../i18n';
 
 import {notify} from './notify';
@@ -61,7 +61,7 @@ export const sendSms = async ({text, to, from}: SendSmsProps): Promise<string> =
 
     const lines = [];
 
-    res = await (new Sms77Client(apiKey as string, pkg.sms77.sentWith)).sms(opts);
+    res = await (new SevenClient(apiKey as string, pkg.seven.sentWith)).sms(opts);
 
     const {balance, messages, sms_type, success, total_price} = res as SmsJsonResponse;
 

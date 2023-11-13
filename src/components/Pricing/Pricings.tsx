@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
-import Sms77Client, {CountryPricing, PricingResponse} from 'sms77-client';
+import SevenClient, {CountryPricing, PricingResponse} from '@seven.io/api';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
@@ -51,7 +51,7 @@ export const Pricings = () => {
 
     const getAndStore = async () => {
         dispatch(setBackdrop(true));
-        const pricing = await (new Sms77Client(apiKey as string, pkg.sms77.sentWith))
+        const pricing = await (new SevenClient(apiKey as string, pkg.seven.sentWith))
             .pricing({format: 'json'}) as PricingResponse;
         dispatch(setBackdrop(false));
 

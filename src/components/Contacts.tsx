@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {useDispatch} from 'react-redux';
-import Sms77Client, {Contact as Sms77Contact} from 'sms77-client';
+import SevenClient, {Contact as SevenContact} from '@seven.io/api';
 import Button from '@material-ui/core/Button';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
@@ -18,7 +18,7 @@ export const Contacts = () => {
     const {t} = useTranslation('contacts');
     const dispatch = useDispatch();
     const [apiKey, setApiKey] = useState<string>('');
-    const [contacts, setContacts] = useState<Sms77Contact[]>([]);
+    const [contacts, setContacts] = useState<SevenContact[]>([]);
 
     useEffect(() => {
         LocalStore.option<string>('apiKey').then(apiKey => {
@@ -43,8 +43,8 @@ export const Contacts = () => {
     const syncContacts = async () => {
         dispatch(setBackdrop(true));
 
-        const contacts = await (new Sms77Client(apiKey as string, pkg.sms77.sentWith))
-            .contacts({action: 'read', json: true,}) as Sms77Contact[];
+        const contacts = await (new SevenClient(apiKey as string, pkg.seven.sentWith))
+            .contacts({action: 'read', json: true,}) as SevenContact[];
 
         dispatch(setBackdrop(false));
 

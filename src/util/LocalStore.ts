@@ -1,7 +1,7 @@
 import {LookupResponse} from '../components/Lookup/types';
 import {IOptions} from '../components/Options/types';
 import {SmsDump} from './sendSms';
-import {Contact} from 'sms77-client';
+import {Contact} from '@seven.io/api';
 import localForage from 'localforage';
 
 import i18n from '../i18n';
@@ -14,7 +14,7 @@ const defaults: ILocalStore = {
     lookups: [],
     options: {
         apiKey: '',
-        from: 'sms77io',
+        from: 'seven',
         signature: '',
         signaturePosition: 'append',
         to: '',
@@ -23,9 +23,9 @@ const defaults: ILocalStore = {
 
 localForage.config({
     driver: localForage.INDEXEDDB,
-    name: pkg.sms77.name,
+    name: pkg.seven.name,
     version: 1.0,
-    storeName: pkg.sms77.name, // must be alphanumeric (+ underscores)
+    storeName: pkg.seven.name, // must be alphanumeric (+ underscores)
 });
 
 localForage.length().then(async length => {
